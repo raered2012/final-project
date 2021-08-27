@@ -1,5 +1,5 @@
 /* fieldset */
-fieldset {
+form {
     margin: 2em 0 ;
     padding: 1em 2em ;
     border: solid 5px rgb(43, 45, 126);
@@ -24,4 +24,11 @@ input {
 .form-group1 {
     height:;
     width: 10cm;
+}
+
+@media only screen and (max-width: 740px) and (min-width: 320px) {
+    form {
+        width: 100%
+    }
+    
 }

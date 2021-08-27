@@ -15,8 +15,9 @@
 
 <body>
     <section>
-    <form>
-        <fieldset>
+      <h1>Task List</h1>
+      <form>
+        
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputTaskName4">ADD NEW TASK</label>
@@ -25,8 +26,9 @@
           
         </div>
         <div class="form-group">
-          <label for="inputTaskDescription"></label>
-          <input type="Description" class="form-control" id="inputDescription" placeholder="Task Description">
+          <label for="inputTaskDescription">Task Description:</label>
+          
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe the task"></textarea>
         </div>
         
         <div class="form-row">
@@ -41,14 +43,18 @@
               <option>D'Nya</option>
             </select>
           </div>
+          <!--Due Date from Ghislaine-->
+      
           <div class="form-group col-md-2">
             <label for="inputZip">Due Date</label>
-            <input type="text" class="form-control" id="inputZip">
+            <input type="date" class="form-control" id="inputZip" value="2021-08-30" min="2021-01-01" max="25-12-31" >
           </div>
-        </div>
+
+
+
         <br>
          <button type="submit" class="btn btn-primary">Add Task</button>
-        </fieldset>
+       
         </form>
     </section>
 
