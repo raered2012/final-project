@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Task Management App</title>
+</head>
+<body>  <h2>Add New Task</h2>
+    <h1>Task List</h1>
+    <form minlength="5" maxlength="8" size="10"> 
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Task:</label>
+            <input type="email input-sm" class="form-control" id="exampleFormControlInput1" placeholder="Task At Hand">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Task Description:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Describe the task"></textarea>
+          </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Assigned To:</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Who Would You Like to Assign This Task To?">
+          </div>
+    </form>
+    <br>   
+       
+       
+       
+    
+                <!--Due Date-->
+        <label for="start">Date:</label>
+                    
+        <input type="date" id="start" name="trip-start"
+       value="2018-07-22"
+       min="2018-01-01" max="2018-12-31">
+        <br>
+        <br>
+        <button>Add Task</button>
+    </form> 
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</html>
