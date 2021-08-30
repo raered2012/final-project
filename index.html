@@ -106,22 +106,23 @@
       </div>
     </section>
     <br />
+    
     <diV class="container d-flex justify-content-center">
     <ul class="list-group list-group-horizontal-xl">
-      <li class="list-group-item">
+      <li class="list-group-item ">
         <section>
           <div>
-            <div class="card justify-content- center" style="width: 18rem">
+            <div class="card justify-content- center " style="width: 18rem">
               <div class="card-body">
                 <div class="container">
                   <div class="row">
                     <div class="col ">
                       <h5 class="card-title">Task</h5>
                     </div>
-                    <div class="col  status">
+                    <div class="col-8 status">
                       <button
                         type="button"
-                        class="btn btn-primary btn-sm"
+                        class="btn btn-primary btn-sm status-prog"
                         disabled
                       >
                         IN PROGRESS
@@ -136,11 +137,14 @@
                 <p class="card-title">Assigned To: <span style="font-weight: bold;">D'Nya</span></p>
                 <p class="card-title">Due Date: 09/15/2021</p>
               </div>
-                <div>
-                  <a href="#" class="btn btn-primary">Mark as done</a>
-                        <a href="#" class="btn btn-primary">Delete</a>
-                  </div>
-
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+                </div>
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
               </div>
             </div>
           </div>
@@ -157,7 +161,7 @@
                     <h5 class="card-title">Task</h5>
                   </div>
                   <div class="col  status">
-                    <button type="button" class="btn btn-success btn-sm" disabled>
+                    <button type="button" class="btn btn-success btn-sm status-bar done-bar" disabled>
                       DONE
                     </button>
                   </div>
@@ -170,8 +174,11 @@
                 <p class="card-title">Assigned To: <span style="font-weight: bold;">All</span></p>
                 <p class="card-title">Due Date: 08/31/2021</p>
               </div>
-              <a href="#" class="btn btn-primary">Delete</a>
-            </div>
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
           </div>
         </div>
       </section>
@@ -186,7 +193,7 @@
                   <h5 class="card-title">Task</h5>
                 </div>
                 <div class="col  status">
-                  <button type="button" class="btn btn-warning btn-sm" disabled>
+                  <button type="button" class="btn btn-warning btn-sm status-bar" disabled>
                     PENDING 
                   </button>
                 </div>
@@ -198,10 +205,15 @@
               <p class="card-text">Debug HTML & CSS files for project 2</p>
               <p class="card-title">Assigned To: <span style="font-weight: bold;">Raven</span></p>
               <p class="card-title">Due Date: 09/03/2021</p>
-            </div>
-            <a href="#" class="btn btn-primary">Mark as done</a>
-            <a href="#" class="btn btn-primary">Delete</a>
-          </div>
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+                </div>
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
+
         </div>
       </div>
     </section>
@@ -217,7 +229,7 @@
             <h5 class="card-title">Task</h5>
           </div>
           <div class="col  status">
-            <button type="button" class="btn btn-danger btn-sm" disabled>
+            <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
               INCOMPLETE
             </button>
           </div>
@@ -229,10 +241,15 @@
         <p class="card-text">Review project 2</p>
         <p class="card-title">Assigned To: <span style="font-weight: bold;">Kaleab</span></p>
         <p class="card-title">Due Date: 09/01/2021</p>
-      </div>
-      <a href="#" class="btn btn-primary">Mark as done</a>
-      <a href="#" class="btn btn-primary">Delete</a>
-    </div>
+        <div class="row btn-mark-gap">
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+          </div>
+          </div>  
+
   </div>
 </div>
 </section>
@@ -248,7 +265,7 @@
             <h5 class="card-title">Task</h5>
           </div>
           <div class="col  status">
-            <button type="button" class="btn btn-danger btn-sm" disabled>
+            <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
               INCOMPLETE
             </button>
           </div>
@@ -260,10 +277,15 @@
         <p class="card-text">Prepare presentation for Zoom meeting</p>
         <p class="card-title">Assigned To: <span style="font-weight: bold;">Ghislaine</span></p>
         <p class="card-title">Due Date: 08/31/2021</p>
-      </div>
-      <a href="#" class="btn btn-primary">Mark as done</a>
-      <a href="#" class="btn btn-primary">Delete</a>
-    </div>
+        <div class="row btn-mark-gap">
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+          </div>
+          </div>  
+
   </div>
 </div>
 </section>

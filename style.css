@@ -28,6 +28,54 @@ button {
   justify-content: baseline;
 }
 
+.card {
+  border-color: rgb(118, 215, 240);
+}
 .card-text {
   text-align: left;
+}
+
+.status-bar {
+  background-color: transparent;
+  position: relative;
+  max-width: 100%;
+  padding: 0 20px;
+  bottom: 10px;
+  left: 25px;
+}
+.status-prog {
+  position: relative;
+  max-width: 100%;
+  padding: 0 25px;
+  bottom: 10px;
+  left: 25px;
+}
+.card-title {
+  position: relative;
+  bottom: 5px;
+  right: 15px;
+}
+
+.done-bar {
+  margin-left: 20px;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.card-body {
+  height: 500%;
+}
+
+.btn-mark {
+  margin: 10px;
+}
+
+.btn-mark-gap {
+  height: 50px;
+}
+
+.card-text {
+  min-height: 90px;
 }
