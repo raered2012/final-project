@@ -18,3 +18,16 @@
   width: 100%;
   text-align: center;
 }
+
+h5 {
+  text-align: left;
+}
+
+button {
+  text-align: right;
+  justify-content: baseline;
+}
+
+.card-text {
+  text-align: left;
+}
