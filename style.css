@@ -31,3 +31,12 @@ button {
 .card-text {
   text-align: left;
 }
+.card {
+
+}
+
+.btn-primary {
+  margin: 10px
+  ;
+  margin-bottom: 50px;
+}
