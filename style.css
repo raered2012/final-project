@@ -1,0 +1,100 @@
+.center {
+  margin: auto;
+  text-align: center;
+}
+
+.form-container {
+  margin: auto;
+  width: 50%;
+  height: auto;
+  border: 3px solid;
+  border-radius: 25px;
+  padding: 30px;
+}
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+h5 {
+  text-align: left;
+}
+
+button {
+  text-align: right;
+  justify-content: baseline;
+}
+
+.card {
+  border-color: rgb(118, 215, 240);
+  border-radius: 10px;
+  shado
+}
+.card-text {
+  text-align: left;
+}
+
+.status-bar {
+  background-color: transparent;
+  position: relative;
+  max-width: 100%;
+  padding: 0 20px;
+  bottom: 10px;
+  left: 25px;
+}
+.status-prog {
+  position: relative;
+  max-width: 100%;
+  padding: 0 25px;
+  bottom: 10px;
+  left: 25px;
+}
+.card-title {
+  position: relative;
+  bottom: 5px;
+}
+
+.done-bar {
+  margin-left: 20px;
+}
+
+.list-group-item {
+  border: none;
+}
+
+.card-body {
+  height: auto;
+}
+
+.btn-mark {
+  margin: 10px;
+}
+
+.btn-mark-gap {
+  height: 50px;
+}
+
+.card-text {
+  min-height: 50px;
+}
+
+.list-group {
+  justify-content: center;
+}
+
+
+@media only screen and (max-width: 740px) and (min-width: 320px) {
+  .form-container {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1500px) and (min-width: 400px) {
+  .list-group {
+    flex-wrap: wrap;
+  }
+}
