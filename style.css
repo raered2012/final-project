@@ -12,12 +12,21 @@
 }
 
 .footer {
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
-}
+  
+  
+
+  
+ }
+ 
+ 
+
+ 
+
 
 h5 {
   text-align: left;
@@ -42,6 +51,7 @@ button {
   padding: 0 20px;
   bottom: 10px;
   left: 25px;
+  
 }
 .status-prog {
   position: relative;
