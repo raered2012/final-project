@@ -12,6 +12,8 @@
         />
         <link rel="stylesheet" href="style.css" />
         <title>Task Management App</title>
+        <script src="./js/taskManager.js"></script>
+        <script src="./js/index.js"></script>
       </head>
       <body>
         <!-- Nav Bar -->
@@ -52,14 +54,14 @@
           <div class="container">
             <div class="col-auto">
               <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
-              <form>
+              <form onsubmit="validForm(event)">
                 
                 <!--Task-->
 
                 <div class="row">
                   <div class="col mb-3 text-info">
-                    <label for="task" class="form-label">Task: </label>
-                    <input
+                    <label id ="task-lable" for="task" class="form-label">Task Name: </label>
+                    <input 
                       type="text"
                       class="form-control"
                       id="task"
@@ -89,7 +91,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    id="task"
+                    id="assign"
                     placeholder="Who would you like to assign this to?"
                   />
                 </div>
@@ -102,17 +104,15 @@
                   <input
                     type="date"
                     id="task-due-date"
-                    name="trip-start"
-                    value="2026-08-29"
-                    min="2021-07-01"
-                    max="2026-12-31"
+                    name="task-start"
+                    
                   />
                 </div>
                 <br />
-
+                
                 <!--Add Task Button-->
 
-                <button type="submit" class="btn btn-primary">Add Task</button>
+                <button id = "add-task-btn" onclick="" type="submit" class="btn btn-primary">Add Task</button>
               </form>
             </div>
             <div class="cards"></div>
@@ -159,7 +159,7 @@
 
                   <div class="card-text">
                     <h6 class="card-subtitle mb-2 text-muted">Task 1</h6>
-                    <p class="card-text">Purchase party supplies</p>
+                    <p id="task-title"class="card-text">Purchase party supplies</p>
                     <p class="card-title">Assigned To: <span style="font-weight: bold;">D'Nya</span></p>
                     <p class="card-title">Due Date: 09/15/2021</p>
                   </div>
