@@ -54,7 +54,7 @@
           <div class="container">
             <div class="col-auto">
               <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
-              <form onsubmit="validForm(event)">
+              <form name="taskform" onsubmit="validForm(event)" >
                 
                 <!--Task-->
 
@@ -112,7 +112,8 @@
                 
                 <!--Add Task Button-->
 
-                <button id = "add-task-btn" onclick="" type="submit" class="btn btn-primary">Add Task</button>
+                <button id = "add-task-btn" onclick="" type="" class="btn btn-primary">Add Task</button>
+              
               </form>
             </div>
             <div class="cards"></div>
