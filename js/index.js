@@ -38,3 +38,6 @@ const alertMessage = () => {
   document.taskform.reset();
   //clear();
 };
+
+const taskHtml = createTaskHtml('Clean the kitchen', 'Take out the trash, clean out the fridge, and wash the dishes', 'Justin', '2021-09-30', 'TODO');
+console.log(taskHtml);
