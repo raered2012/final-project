@@ -1,242 +1,137 @@
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-          crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="style.css" />
-        <title>Task Management App</title>
-        <script src="./js/taskManager.js"></script>
-        <script src="./js/index.js"></script>
-      </head>
-      <body>
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-expand-lg bg-info navbar-info">
-          <div class="container">
-            <a href="#" class="navbar-brand">Task Manager</a>
-            <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navmenu"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navmenu">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                  <a href="#main" class="nav-link">Main</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#important" class="nav-link">Important Tasks</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#calendar" class="nav-link">Calendar</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <br />
-        <br />
-        <div class="center">
-          <h1>Task Manager</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Task Management App</title>
+    <script src="./js/taskManager.js"></script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg bg-info navbar-info">
+      <div class="container">
+        <a href="#" class="navbar-brand">Task Manager</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#main" class="nav-link">Main</a>
+            </li>
+            <li class="nav-item">
+              <a href="#important" class="nav-link">Important Tasks</a>
+            </li>
+            <li class="nav-item">
+              <a href="#calendar" class="nav-link">Calendar</a>
+            </li>
+          </ul>
         </div>
-        <hr />
-        <!-- Form Starts Here -->
-        <section class="form-container border border-info shadow p-3 ">
-          <div class="container">
-            <div class="col-auto">
-              <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
-              <form name="taskform" onsubmit="validForm(event)" >
-                
-                <!--Task-->
+      </div>
+    </nav>
+    <br />
+    <br />
+    <div class="center">
+      <h1>Task Manager</h1>
+    </div>
+    <hr />
+    <!-- Form Starts Here -->
+    <section class="form-container border border-info shadow p-3 ">
+      <div class="container">
+        <div class="col-auto">
+          <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
+          <form name="taskform" onsubmit="validForm(event)" >
+            
+            <!--Task-->
 
-                <div class="row">
-                  <div class="col mb-3 text-info">
-                    <label id ="task-lable" for="task" class="form-label">Task Name: </label>
-                    <input 
-                      type="text"
-                      class="form-control"
-                      id="task"
-                      placeholder="Enter task here"
-                    />
-                  </div>
-                </div>
-
-                <!--Task Description-->
-
-                <div class="mb-3 text-info">
-                  <label for="task-description" class="form-label"
-                    >Task Description:</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="task-description"
-                    placeholder="Describe your task here"
-                    rows="3"
-                  ></textarea>
-                </div>
-                
-                <!--Assign To-->
-                
-                <div class="text-info">
-                  <label for="inputAssignTo">Assign to:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="assign"
-                    placeholder="Who would you like to assign this to?"
-                  />
-                </div>
-                <br />
-                
-                <!--Calender-->
-                
-                <div class="col mb-3 text-info">
-                  <label for="task-due-date">Due Date:</label>
-                  <input
-                    type="date"
-                    id="task-due-date"
-                    name="task-start"
-                    
-                  />
-                </div>
-                <br />
-                
-                <!--Add Task Button-->
-
-                <button id = "add-task-btn" onclick="" type="" class="btn btn-primary">Add Task</button>
-              
-              </form>
-            </div>
-            <div class="cards"></div>
-          </div>
-        </section>
-        <br />
-        
-
-        <!--List Group-->
-        <div class="container group-list-container ">
-        <diV class="container group-list"></diV>
-          <ul class="list-group list-group-horizontal-md">
-          <li class="list-group-item ">
-            <section>
-              
-              <!--Card Starts here-->
-                <div>
-                <div class="card justify-content- center shadow " style="width: 18rem">
-                  <div class="card-body">
-                    <div class="container">
-                      <div class="row">
-                        <div class="col ">
-                          
-                          <!--Task 1-->
-                          <h5 class="card-title">Task</h5>
-                        </div>
-                        <div class="col-8 status">
-                          
-                          <!--Status bar for In Progress-->
-
-                          <button
-                            type="button"
-                            class="btn btn-primary btn-sm status-prog"
-                            disabled
-                          >
-                            IN PROGRESS
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <br />
-
-                    <!--Card Body and Texts-->
-
-                  <div class="card-text">
-                    <h6 class="card-subtitle mb-2 text-muted">Task 1</h6>
-                    <p id="task-title"class="card-text">Purchase party supplies</p>
-                    <p class="card-title">Assigned To: <span style="font-weight: bold;">D'Nya</span></p>
-                    <p class="card-title">Due Date: 09/15/2021</p>
-                  </div>
-                  
-                  <!--Mark as Done & Delete Buttons-->
-                  
-                  <div class="row btn-mark-gap">
-                    <div class="col">
-                      <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
-                    </div>
-                    <div class="col">
-                      <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
-                    </div>
-                    </div>  
-                  </div>
-                </div>
+            <div class="row">
+              <div class="col mb-3 text-info">
+                <label id ="task-lable" for="task" class="form-label">Task Name: </label>
+                <input 
+                  type="text"
+                  class="form-control"
+                  id="task"
+                  placeholder="Enter task here"
+                />
               </div>
-          </section>
-        </li>
-          
-                  <!--Task 2 starts here-->
+            </div>
 
-          
-          <li class="list-group-item ">
-            <section>
+            <!--Task Description-->
 
-              <!--Card 2 starts here-->
+            <div class="mb-3 text-info">
+              <label for="task-description" class="form-label"
+                >Task Description:</label
+              >
+              <textarea
+                class="form-control"
+                id="task-description"
+                placeholder="Describe your task here"
+                rows="3"
+              ></textarea>
+            </div>
+            
+            <!--Assign To-->
+            
+            <div class="text-info">
+              <label for="inputAssignTo">Assign to:</label>
+              <input
+                type="text"
+                class="form-control"
+                id="assign"
+                placeholder="Who would you like to assign this to?"
+              />
+            </div>
+            <br />
+            
+            <!--Calender-->
+            
+            <div class="col mb-3 text-info">
+              <label for="task-due-date">Due Date:</label>
+              <input
+                type="date"
+                id="task-due-date"
+                name="task-start"
+                
+              />
+            </div>
+            <br />
+            
+            <!--Add Task Button-->
+
+            <button id = "add-task-btn" onclick="" type="" class="btn btn-primary">Add Task</button>
+          
+          </form>
+        </div>
+        <div class="cards"></div>
+      </div>
+    </section>
+    <br />
+    
+
+    <!--List Group-->
+    <div class="container group-list-container ">
+    <diV class="container group-list"></diV>
+      <ul class="list-group list-group-horizontal-md">
+      <li class="list-group-item ">
+        <section>
+          
+          <!--Card Starts here-->
             <div>
-              <div class="card justify-content- center shadow" style="width: 18rem">
-                <div class="card-body">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col ">
-                        <h5 class="card-title">Task</h5>
-                      </div>
-
-                      <!--Status for Done-->
-
-                      <div class="col  status">
-                        <button type="button" class="btn btn-success btn-sm status-bar done-bar" disabled>
-                          DONE
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <br />
-
-                  <!--Card Body & Text fot Task 2-->
-
-                  <div class="card-text">
-                    <h6 class="card-subtitle mb-2 text-muted">Task 2</h6>
-                    <p class="card-text">Complete and test project for Sprint 1</p>
-                    <p class="card-title">Assigned To: <span style="font-weight: bold;">All</span></p>
-                    <p class="card-title">Due Date: 08/31/2021</p>
-                  </div>
-
-                  <!--Delete Button for Task 2-->
-
-                  <div class="row btn-mark-gap">
-                    <div class="col">
-                      <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
-                    </div>
-                    </div>  
-              </div>
-            </div>
-          </section>
-      </li>
-
-          <!--List Group-->
-
-          <li class="list-group-item"><section>
-          <div>
-
-            <!--Card 3 starts here-->
-
-            <div class="card justify-content- center shadow" style="width: 18rem">
+            <div class="card justify-content- center shadow " style="width: 18rem">
               <div class="card-body">
                 <div class="container">
                   <div class="row">
@@ -247,7 +142,7 @@
                     <!--Status bar for Pending Task-->
                     
                     <div class="col  status">
-                      <button type="button" class="btn btn-warning btn-sm status-bar" disabled>
+                      <button id="card-status" type="button" class="btn btn-warning btn-sm status-bar" disabled>
                         PENDING 
                       </button>
                     </div>
@@ -255,150 +150,277 @@
                 </div>
                 <br />
 
-                <!--Card Body & Text for Task 3-->
-                <div class="card-text">
-                  <h6 class="card-subtitle mb-2 text-muted">Task 3</h6>
-                  <p class="card-text">Debug HTML & CSS files for project 2</p>
-                  <p class="card-title">Assigned To: <span style="font-weight: bold;">Raven</span></p>
-                  <p class="card-title">Due Date: 09/03/2021</p>
+                <!--Card Body and Texts-->
 
-                  <!--Mark as Done & Delete buttons-->
-
-                  <div class="row btn-mark-gap">
-                    <div class="col">
-                      <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
-                    </div>
-                    <div class="col">
-                      <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
-                    </div>
-                    </div>  
-
-            </div>
-          </div>
-        </section>
-
-        <!--List Group-->
-    </li>
-    </li>
-    <li class="list-group-item"><section>
-    <div>
-
-      <!--Card 4 starts Here-->
-
-      <div class="card justify-content- center shadow" style="width: 18rem">
-        <div class="card-body">
-          <div class="container">
-            <div class="row">
-              <div class="col ">
-                <h5 class="card-title">Task</h5>
+              <div class="card-text">
+                <h6  class="card-subtitle mb-2 text" style="font-weight: bold;">Task Name: <span id="card-task" style="font-weight: normal;">Title of your task</span> </h6>
+                <p class="card-text" style="font-weight: bold;">Description: <span id="card-descriptions" style="font-weight: normal;"><br>Description of your task</span></p>
+                <p  class="card-title" style="font-weight: bold;">Assigned To: <span id="card-assignTo"style="font-weight: normal;">D'Nya</span></p>
+                <p class="card-title" style="font-weight: bold;">Due Date: <span id="card-dueDate" style="font-weight: normal;">08/31/2021</span></p>
               </div>
-
-              <!--Status bar for Incomplete-->
-
-              <div class="col  status">
-                <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
-                  INCOMPLETE
-                </button>
+              
+              <!--Mark as Done & Delete Buttons-->
+              
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+                </div>
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
               </div>
             </div>
           </div>
-          <br />
+      </section>
+    </li>
+      
+              <!--Task 2 starts here-->
           
-          <!--Card Body and Text-->
+      
+      <li class="list-group-item ">
+        <section>
 
-          <div class="card-text">
-            <h6 class="card-subtitle mb-2 text-muted">Task 4</h6>
-            <p class="card-text">Review project 2</p>
-            <p class="card-title">Assigned To: <span style="font-weight: bold;">Kaleab</span></p>
-            <p class="card-title">Due Date: 09/01/2021</p>
-          
-          <!--Mark as Done & Delete button for Task 4-->
+          <!--Card 2 starts here-->
+        <div>
+          <div class="card justify-content- center shadow" style="width: 18rem">
+            <div class="card-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col ">
+                    <h5 class="card-title">Task</h5>
+                  </div>
 
-            <div class="row btn-mark-gap">
-              <div class="col">
-                <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+                  <!--Status for Done-->
+
+                  <div class="col  status">
+                    <button type="button" class="btn btn-success btn-sm status-bar done-bar" disabled>
+                      DONE
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div class="col">
-                <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+              <br />
+
+              <!--Card Body & Text fot Task 2-->
+
+              <div class="card-text">
+                <h6 class="card-subtitle mb-2 text-muted">Task Name 2</h6>
+                <p class="card-text">Complete and test project for Sprint 1</p>
+                <p class="card-title">Assigned To: <span style="font-weight: bold;">All</span></p>
+                <p class="card-title">Due Date: 08/31/2021</p>
               </div>
-              </div>  
 
-      </div>
-    </div>
-    </section>
-    
+              <!--Delete Button for Task 2-->
 
-  <!--List group-->
-
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
+          </div>
+        </div>
+      </section>
   </li>
-    </li>
-    <li class="list-group-item"><section>
-    <div>
 
-      <!--Card 5 starts here-->
+      <!--List Group-->
 
-      <div class="card justify-content- center shadow" style="width: 18rem">
-        <div class="card-body">
-          <div class="container">
-            <div class="row">
-              <div class="col ">
-                <h5 class="card-title">Task</h5>
-              </div>
-      
-              <!--Status Bar for Incomplete Task 5-->
+      <li class="list-group-item"><section>
+      <div>
 
-              <div class="col  status">
-                <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
-                  INCOMPLETE
-                </button>
+        <!--Card 3 starts here-->
+
+        <div class="card justify-content- center shadow" style="width: 18rem">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col ">
+                  <h5 class="card-title">Task</h5>
+                </div>
+
+                <!--Status bar for Pending Task-->
+                
+                <div class="col  status">
+                  <button type="button" class="btn btn-warning btn-sm status-bar" disabled>
+                    PENDING 
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-          <br />
-          
-          <!-- Card Body and Text for task 5-->
+            <br />
 
-          <div class="card-text">
-            <h6 class="card-subtitle mb-2 text-muted">Task 5</h6>
-            <p class="card-text">Prepare presentation for Zoom meeting</p>
-            <p class="card-title">Assigned To: <span style="font-weight: bold;">Ghislaine</span></p>
-            <p class="card-title">Due Date: 08/31/2021</p>
-          
-          <!--Mark as Done & Delete buttons for task 5-->
-          
-            <div class="row btn-mark-gap">
-              <div class="col">
-                <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
-              </div>
-              <div class="col">
-                <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
-              </div>
-              </div>  
+            <!--Card Body & Text for Task 3-->
+            <div class="card-text">
+              <h6 class="card-subtitle mb-2 text-muted">Task Name 3</h6>
+              <p class="card-text">Debug HTML & CSS files for project 2</p>
+              <p class="card-title">Assigned To: <span style="font-weight: bold;">Raven</span></p>
+              <p class="card-title">Due Date: 09/03/2021</p>
 
+              <!--Mark as Done & Delete buttons-->
+
+              <div class="row btn-mark-gap">
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+                </div>
+                <div class="col">
+                  <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+                </div>
+                </div>  
+
+        </div>
       </div>
-    </div>
-    
     </section>
-    </li>
-        </ul>
-      </diV>
-    </div>
-    
-    <footer class="footer bg-info fixed-bottom">
-      <a href="#">Help</a>
-      <a href="#">More Info</a>
-    </footer>
-      
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-          crossorigin="anonymous"
-        ></script>
-        <br>
 
-        <!--Footer-->
-      <div>
+    <!--List Group-->
+</li>
+</li>
+<li class="list-group-item"><section>
+<div>
+
+  <!--Card 4 starts Here-->
+
+  <div class="card justify-content- center shadow" style="width: 18rem">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col ">
+            <h5 class="card-title">Task</h5>
+          </div>
+
+          <!--Status bar for Incomplete-->
+
+          <div class="col  status">
+            <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
+              INCOMPLETE
+            </button>
+          </div>
+        </div>
       </div>
-      </body>
+      <br />
       
-        </html>
+      <!--Card Body and Text-->
+
+      <div class="card-text">
+        <h6 class="card-subtitle mb-2 text-muted">Task Name 4</h6>
+        <p class="card-text">Review project 2</p>
+        <p class="card-title">Assigned To: <span style="font-weight: bold;">Kaleab</span></p>
+        <p class="card-title">Due Date: 09/01/2021</p>
+      
+      <!--Mark as Done & Delete button for Task 4-->
+
+        <div class="row btn-mark-gap">
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+          </div>
+          </div>  
+
+  </div>
+</div>
+</section>
+
+
+<!--List group-->
+
+</li>
+</li>
+<li class="list-group-item"><section>
+<div>
+
+  <!--Card 5 starts here-->
+
+  <div class="card justify-content- center shadow" style="width: 18rem">
+    <div class="card-body">
+      <div class="container">
+        <div class="row">
+          <div class="col ">
+            <h5 class="card-title">Task</h5>
+          </div>
+  
+          <!--Status Bar for Incomplete Task 5-->
+
+          <div class="col  status">
+            <button type="button" class="btn btn-danger btn-sm status-bar" disabled>
+              INCOMPLETE
+            </button>
+          </div>
+        </div>
+      </div>
+      <br />
+      
+      <!-- Card Body and Text for task 5-->
+
+      <div class="card-text">
+        <h6 class="card-subtitle mb-2 text-muted">Task Name 5</h6>
+        <p class="card-text">Prepare presentation for Zoom meeting</p>
+        <p class="card-title">Assigned To: <span style="font-weight: bold;">Ghislaine</span></p>
+        <p class="card-title">Due Date: 08/31/2021</p>
+      
+      <!--Mark as Done & Delete buttons for task 5-->
+      
+        <div class="row btn-mark-gap">
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+          </div>
+          <div class="col">
+            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+          </div>
+          </div>  
+
+  </div>
+</div>
+
+</section>
+</li>
+    </ul>
+  </diV>
+</div>
+<form name="selectForm">
+  <p>
+    <label for="musicTypes">Choose some music types, then click the button below:</label>
+    <select id="musicTypes" name="musicTypes" multiple="multiple">
+      <option selected="selected">R&B</option>
+      <option>Jazz</option>
+      <option>Blues</option>
+      <option>New Age</option>
+      <option>Classical</option>
+      <option>Opera</option>
+    </select>
+  </p>
+  <p><input id="btn" type="button" value="How many are selected?" /></p>
+</form>
+
+<script>
+function howMany(selectObject) {
+  let numberSelected = 0;
+  for (let i = 0; i < selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberSelected++;
+    }
+  }
+  return numberSelected;
+}
+
+
+</script>
+
+<footer class="footer bg-info fixed-bottom">
+  <a href="#">Help</a>
+  <a href="#">More Info</a>
+</footer>
+  
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+    <br>
+
+    <!--Footer-->
+  <div>
+  </div>
+  </body>
+  
+    </html>

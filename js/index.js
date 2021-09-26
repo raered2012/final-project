@@ -8,16 +8,30 @@ const validForm = (e) => {
   const newTaskAssign = document.querySelector("#assign");
   const newTaskdate = document.querySelector("#task-due-date");
   //The value the form
-  let tasks = newTaskName.value;
+  const tasks = newTaskName.value;
   const descriptions = newTaskDesc.value;
   const assignTo = newTaskAssign.value;
   const dueDate = newTaskdate.value;
   alertMessage();
+
+  const newForm = new TaskManager();
+  const addNewTasks = newForm.addTask(tasks, descriptions, assignTo, dueDate);
+  newForm.render();
+  console.log(newForm.tasks);
+  console.log(newForm.render());
   //tasks.TaskManager.addTask();
   // function clear() {
   // }
 
-  console.log(tasks);
+  const date = new Date(dueDate).toDateString();
+  console.log(tasks, descriptions, assignTo, date);
+  document.querySelector("#card-task").innerHTML = tasks;
+
+  document.querySelector("#card-descriptions").innerHTML = descriptions;
+  document.querySelector("#card-assignTo").innerHTML = assignTo;
+  document.querySelector("#card-dueDate").innerHTML = dueDate;
+
+  //console.log(date.toDateString());
 };
 const alertMessage = () => {
   let name = document.querySelector("#task").value;
@@ -38,3 +52,13 @@ const alertMessage = () => {
   document.taskform.reset();
   //clear();
 };
+
+const taskHtml = createTaskHtml(
+  "Clean the kitchen",
+  "Take out the trash, clean out the fridge, and wash the dishes",
+  "Justin",
+  "2021-09-30",
+  "TODO"
+);
+
+console.log(taskHtml);
