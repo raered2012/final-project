@@ -136,20 +136,14 @@
                 <div class="container">
                   <div class="row">
                     <div class="col ">
-                      
-                      <!--Task 1-->
                       <h5 class="card-title">Task</h5>
                     </div>
-                    <div class="col-8 status">
-                      
-                      <!--Status bar for In Progress-->
 
-                      <button
-                        type="button"
-                        class="btn btn-primary btn-sm status-prog"
-                        disabled
-                      >
-                        IN PROGRESS
+                    <!--Status bar for Pending Task-->
+                    
+                    <div class="col  status">
+                      <button id="card-status" type="button" class="btn btn-warning btn-sm status-bar" disabled>
+                        PENDING 
                       </button>
                     </div>
                   </div>
@@ -159,10 +153,10 @@
                 <!--Card Body and Texts-->
 
               <div class="card-text">
-                <h6 class="card-subtitle mb-2 text-muted">Task 1</h6>
-                <p id="task-title"class="card-text">Purchase party supplies</p>
-                <p class="card-title">Assigned To: <span style="font-weight: bold;">D'Nya</span></p>
-                <p class="card-title">Due Date: 09/15/2021</p>
+                <h6  class="card-subtitle mb-2 text" style="font-weight: bold;">Task Name: <span id="card-task" style="font-weight: normal;">Title of your task</span> </h6>
+                <p class="card-text" style="font-weight: bold;">Description: <span id="card-descriptions" style="font-weight: normal;"><br>Description of your task</span></p>
+                <p  class="card-title" style="font-weight: bold;">Assigned To: <span id="card-assignTo"style="font-weight: normal;">D'Nya</span></p>
+                <p class="card-title" style="font-weight: bold;">Due Date: <span id="card-dueDate" style="font-weight: normal;">08/31/2021</span></p>
               </div>
               
               <!--Mark as Done & Delete Buttons-->
@@ -182,7 +176,7 @@
     </li>
       
               <!--Task 2 starts here-->
-
+          
       
       <li class="list-group-item ">
         <section>
@@ -211,7 +205,7 @@
               <!--Card Body & Text fot Task 2-->
 
               <div class="card-text">
-                <h6 class="card-subtitle mb-2 text-muted">Task 2</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Task Name 2</h6>
                 <p class="card-text">Complete and test project for Sprint 1</p>
                 <p class="card-title">Assigned To: <span style="font-weight: bold;">All</span></p>
                 <p class="card-title">Due Date: 08/31/2021</p>
@@ -257,7 +251,7 @@
 
             <!--Card Body & Text for Task 3-->
             <div class="card-text">
-              <h6 class="card-subtitle mb-2 text-muted">Task 3</h6>
+              <h6 class="card-subtitle mb-2 text-muted">Task Name 3</h6>
               <p class="card-text">Debug HTML & CSS files for project 2</p>
               <p class="card-title">Assigned To: <span style="font-weight: bold;">Raven</span></p>
               <p class="card-title">Due Date: 09/03/2021</p>
@@ -307,7 +301,7 @@
       <!--Card Body and Text-->
 
       <div class="card-text">
-        <h6 class="card-subtitle mb-2 text-muted">Task 4</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Task Name 4</h6>
         <p class="card-text">Review project 2</p>
         <p class="card-title">Assigned To: <span style="font-weight: bold;">Kaleab</span></p>
         <p class="card-title">Due Date: 09/01/2021</p>
@@ -359,7 +353,7 @@
       <!-- Card Body and Text for task 5-->
 
       <div class="card-text">
-        <h6 class="card-subtitle mb-2 text-muted">Task 5</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Task Name 5</h6>
         <p class="card-text">Prepare presentation for Zoom meeting</p>
         <p class="card-title">Assigned To: <span style="font-weight: bold;">Ghislaine</span></p>
         <p class="card-title">Due Date: 08/31/2021</p>
@@ -383,6 +377,34 @@
     </ul>
   </diV>
 </div>
+<form name="selectForm">
+  <p>
+    <label for="musicTypes">Choose some music types, then click the button below:</label>
+    <select id="musicTypes" name="musicTypes" multiple="multiple">
+      <option selected="selected">R&B</option>
+      <option>Jazz</option>
+      <option>Blues</option>
+      <option>New Age</option>
+      <option>Classical</option>
+      <option>Opera</option>
+    </select>
+  </p>
+  <p><input id="btn" type="button" value="How many are selected?" /></p>
+</form>
+
+<script>
+function howMany(selectObject) {
+  let numberSelected = 0;
+  for (let i = 0; i < selectObject.options.length; i++) {
+    if (selectObject.options[i].selected) {
+      numberSelected++;
+    }
+  }
+  return numberSelected;
+}
+
+
+</script>
 
 <footer class="footer bg-info fixed-bottom">
   <a href="#">Help</a>
