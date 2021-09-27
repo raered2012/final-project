@@ -14,22 +14,24 @@ const validForm = (e) => {
   const dueDate = newTaskdate.value;
   alertMessage();
 
-  const newForm = new TaskManager();
-  const addNewTasks = newForm.addTask(tasks, descriptions, assignTo, dueDate);
+  let newForm = new TaskManager(0);
+  newForm.addTask(tasks, descriptions, assignTo, dueDate);
+  console.log(newForm.tasks[0]);
   newForm.render();
-  console.log(newForm.tasks);
-  console.log(newForm.render());
+
+  console.log(newForm.getTaskById(0));
+  // console.log(newForm.render());
   //tasks.TaskManager.addTask();
   // function clear() {
   // }
+  // const date = new Date(dueDate).toDateString();
+  // console.log(date);
+  // console.log(tasks, descriptions, assignTo, dueDate);
+  // document.querySelector("#card-task").innerHTML = tasks;
 
-  const date = new Date(dueDate).toDateString();
-  console.log(tasks, descriptions, assignTo, date);
-  document.querySelector("#card-task").innerHTML = tasks;
-
-  document.querySelector("#card-descriptions").innerHTML = descriptions;
-  document.querySelector("#card-assignTo").innerHTML = assignTo;
-  document.querySelector("#card-dueDate").innerHTML = dueDate;
+  // document.querySelector("#card-descriptions").innerHTML = descriptions;
+  // document.querySelector("#card-assignTo").innerHTML = assignTo;
+  // document.querySelector("#card-dueDate").innerHTML = dueDate;
 
   //console.log(date.toDateString());
 };
@@ -53,12 +55,12 @@ const alertMessage = () => {
   //clear();
 };
 
-const taskHtml = createTaskHtml(
-  "Clean the kitchen",
-  "Take out the trash, clean out the fridge, and wash the dishes",
-  "Justin",
-  "2021-09-30",
-  "TODO"
-);
+//"event" here is the event parameter
+// let markAsDone = document.querySelector("div.card-container");
+// console.log(markAsDone);
 
-console.log(taskHtml);
+// markAsDone.addEventListener("click", (event) => {
+//   if (markAsDone === "done-button") {
+//     console.log("mark as done clicked");
+//   }
+// });
