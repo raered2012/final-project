@@ -37,7 +37,7 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
         
         <div class="row btn-mark">
           <div id="done-button" class="col">
-            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+            <a href="#" class="done-button btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
           </div>
           <div class="col">
             <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
