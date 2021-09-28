@@ -55,6 +55,14 @@ const alertMessage = () => {
   //clear();
 };
 
+// "event" here is the event parameter
+let taskLists = document.querySelector("#card-container");
+//let statusbtn = taskLists.status;
+// let changeStatus = taskLists.
+taskLists.addEventListener("click", (event) => {
+  if (event.target.taskLists == "done-button") {
+  }
+});
 //"event" here is the event parameter
 // let markAsDone = document.querySelector("div.card-container");
 // console.log(markAsDone);
