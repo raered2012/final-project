@@ -1,25 +1,30 @@
 //import { TaskManager } from "./taskManager.js";
 
+let newForm = new TaskManager(0);
+
 const validForm = (e) => {
   //console.log(e);
   e.preventDefault();
   const newTaskName = document.querySelector("#task");
   const newTaskDesc = document.querySelector("#task-description");
   const newTaskAssign = document.querySelector("#assign");
-  const newTaskdate = document.querySelector("#task-due-date");
+  const newTaskDate = document.querySelector("#task-due-date");
   //The value the form
   const tasks = newTaskName.value;
   const descriptions = newTaskDesc.value;
   const assignTo = newTaskAssign.value;
-  const dueDate = newTaskdate.value;
+  const dueDate = newTaskDate.value;
   alertMessage();
 
-  let newForm = new TaskManager(0);
+  
   newForm.addTask(tasks, descriptions, assignTo, dueDate);
-  console.log(newForm.tasks[0]);
+  console.log(newForm);
   newForm.render();
 
-  console.log(newForm.getTaskById(0));
+//console.log(newForm.tasks[0]);
+
+  console.log("getTaskById1: ", newForm.getTaskById());
+  //console.log("getTaskById2: ", newForm.getTaskById());
   // console.log(newForm.render());
   //tasks.TaskManager.addTask();
   // function clear() {
@@ -41,9 +46,9 @@ const alertMessage = () => {
   let assignTo = document.querySelector("#assign").value;
   let dueDate = document.querySelector("#task-due-date").value;
   if (name === "") {
-    window.alert("You have not enterd name for your task");
+    window.alert("You have not entered name for your task");
   } else if (description === "") {
-    window.alert("You have not enterd description for your task");
+    window.alert("You have not entered description for your task");
   } else if (assignTo === "") {
     window.alert("You have not assign this task");
   } else if (dueDate === "") {

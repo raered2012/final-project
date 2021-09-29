@@ -62,27 +62,46 @@ class TaskManager {
     this.tasks = [];
   }
 
-  addTask(tasks, descriptions, assignTo, dueDate, status = "Todo") {
-    let idGenerator = this.currentId;
-    idGenerator++;
-    this.tasks.push({
-      id: idGenerator,
-      tasks: tasks,
+  addTask(name, descriptions, assignTo, dueDate, status = "Todo") {
+    this.currentId++;
+    const task = {
+      id: this.currentId,
+      name: name,
       descriptions: descriptions,
       assignTo: assignTo,
       dueDate: dueDate,
-      status: status,
-    });
+      status: status
+    }
+    this.tasks.push(task);
+  };
+
+  getTaskById(taskId) {
+      let foundTask;
+      let counter = 0;
+      while (counter < this.tasks.length) {
+        const task = this.tasks[counter];
+        
+        if (task.id === taskId) {
+          foundTask = task;
+        } 
+        counter++;
+      }
+      console.log(foundTask);
+      console.log(taskId);
+      return foundTask;
+      
   }
+    
+  
   render() {
     const tasksHtmlList = [];
-    let counter = 0;
-    while (counter < this.tasks.length) {
+    for (let counter = 0; counter < this.tasks.length; counter++) {
       const task = this.tasks[counter];
       const date = new Date(task.dueDate).toDateString();
       // const formattedDate = date.toDateString();
-      const taskHtml = createTaskHtml(
-        task.tasks,
+      const taskHtml = 
+      createTaskHtml(
+        task.name,
         task.descriptions,
         task.assignTo,
         date,
@@ -92,25 +111,29 @@ class TaskManager {
       tasksHtmlList.push(taskHtml);
       const tasksHtml = tasksHtmlList.join("\n");
       document.querySelector("#card-container").innerHTML = tasksHtml;
-      counter++;
     }
-  }
-  getTaskById(taskId) {
-    let foundTask = "";
-    let counter = 0;
-    while (counter < this.tasks.length) {
-      const task = this.tasks[counter];
-      console.log(task);
-      if (this.currentId === taskId) {
-        foundTask = task;
-        return foundTask;
-      }
-      console.log(task);
-      counter++;
-    }
-  }
-}
-
+    // let counter = 0;
+    // while (counter < this.tasks.length) {
+    //   const task = this.tasks[counter];
+    //   const date = new Date(task.dueDate).toDateString();
+    //   // const formattedDate = date.toDateString();
+    //   const taskHtml = createTaskHtml(
+    //     task.name,
+    //     task.descriptions,
+    //     task.assignTo,
+    //     date,
+    //     task.status,
+    //     task.id
+    //   );
+    //   tasksHtmlList.push(taskHtml);
+    //   const tasksHtml = tasksHtmlList.join("\n");
+    //   document.querySelector("#card-container").innerHTML = tasksHtml;
+    //   counter++;
+    // }
+    
+  };
+ 
+};
 //export class { TaskManager };
 
 // document.querySelector("#card-task").innerHTML = tasks[1];
