@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      
       rel="stylesheet"
       integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
       crossorigin="anonymous"
@@ -17,9 +18,14 @@
   </head>
   <body>
     <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg bg-info navbar-info">
+    
+    <nav class="navbar navbar-expand-lg bg-info navbar-info ">
       <div class="container">
-        <a href="#" class="navbar-brand">Task Manager</a>
+        <div class="nav">
+          <ul>
+        <a href="aboutus.html" target="_blank"><li >Who We Are</li></a> 
+        <a href="about.html" target="_blank"><li >About</li></a>
+        </ul>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,27 +37,45 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#main" class="nav-link">Main</a>
+               <!-- <a href="#main" class="nav-link">Main</a> -->
             </li>
             <li class="nav-item">
-              <a href="#important" class="nav-link">Important Tasks</a>
+              <!-- <a href="#important" class="nav-link">Important Tasks</a> -->
             </li>
             <li class="nav-item">
-              <a href="#calendar" class="nav-link">Calendar</a>
+              <!-- <a href="#calendar" class="nav-link">Calendar</a> -->
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <br />
-    <br />
-    <div class="center">
-      <h1>Task Manager</h1>
+    <!-- <br />
+    <br /> -->
+
+    <header>
+    <div class="overlay>
+       <!-- <h1>Task Manager</h1> -->
+      <div class="overlay"></div>
+      <img class="cover" src="https://20o8nn37v3mzb7unq3fsj61e-wpengine.netdna-ssl.com/wp-content/uploads/2019/02/What-is-task-management.jpg" alt="task manger image">
     </div>
-    <hr />
+    </header>
     <!-- Form Starts Here -->
-    <section class="form-container border border-info shadow p-3 ">
-      <div class="container">
+    <form class="center">
+      <h2>Task Manager</h2>
+    
+    </form>
+
+    <div class="row">
+      <div class="col mb-3 mx-auto">
+      <div class="col-md-6 mx-auto">
+       
+
+      </div>
+    </div>
+     <section class="container h-100">
+      <div class="d-flex h100 text-center align-items-center"></div>
+      <div class="w-100 text-white">
+      <div class="container"> 
         <div class="col-auto">
           <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
           <form name="taskform" onsubmit="validForm(event)" >
@@ -74,8 +98,8 @@
 
             <div class="mb-3 text-info">
               <label for="task-description" class="form-label"
-                >Task Description:</label
-              >
+                >Task Description:</label>
+       
               <textarea
                 class="form-control"
                 id="task-description"
@@ -136,8 +160,9 @@
 </script>
 
 <footer class="footer bg-info fixed-bottom">
-  <a href="#">Help</a>
-  <a href="#">More Info</a>
+  <!-- <a href="#">Help</a> -->
+  <!-- <a href="#">More Info</a> -->
+  <p>&copy; Team 6 JWD Generation USA</p>
 </footer>
   
     <script
