@@ -62,7 +62,8 @@ button {
 }
 
 .card-body {
-  height: auto;
+  height: 275px;
+  overflow-wrap: hidden;
 }
 
 .btn-mark {

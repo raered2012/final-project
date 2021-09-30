@@ -1,6 +1,12 @@
 const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
+  let markAsDone, statusStyle;
+  status == "Todo"
+    ? (markAsDone = "visible btn-primary")
+    : (markAsDone = "invisible ");
+
+  status == "Done" ? (statusStyle = "#00e600") : (statusStyle = "#ffbf00");
   const html2 = `
-  <li data-task-id = '${id}' class="list-group-item ">
+  <li  class="list-group-item ">
   <section>
     
     <!--Card Starts here-->
@@ -16,8 +22,9 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
               <!--Status bar for Pending Task-->
               
               <div class="col  status">
-                <button id="card-status" type="button" class="btn btn-warning btn-sm status-bar" disabled>
+                <button id="card-status" type="button" class="btn btn-warning btn-sm status-bar" style = "background-color:${statusStyle}" disabled>
                 ${status} 
+               
                 </button>
               </div>
             </div>
@@ -36,11 +43,11 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
         <!--Mark as Done & Delete Buttons-->
         
         <div class="row btn-mark">
-          <div id="done-button" class="col">
-            <a href="#" class="done-button btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
+          <div id="done-button" data-task-id = '${id}' class="col">
+            <a href="#" class="${markAsDone} done-button btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
           </div>
-          <div class="col">
-            <a href="#" class="btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+          <div class="col" delete-btn = '${id}'>
+            <a href="#"  class="delete-button  btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
           </div>
           </div>  
         </div>
@@ -70,37 +77,33 @@ class TaskManager {
       descriptions: descriptions,
       assignTo: assignTo,
       dueDate: dueDate,
-      status: status
-    }
+      status: status,
+    };
     this.tasks.push(task);
-  };
+    console.log(this.tasks);
+  }
 
   getTaskById(taskId) {
-      let foundTask;
-      let counter = 0;
-      while (counter < this.tasks.length) {
-        const task = this.tasks[counter];
-        
-        if (task.id === taskId) {
-          foundTask = task;
-        } 
-        counter++;
+    let foundTask;
+    let counter = 0;
+    while (counter < this.tasks.length) {
+      const task = this.tasks[counter];
+
+      if (task.id === taskId) {
+        foundTask = task;
       }
-      console.log(foundTask);
-      console.log(taskId);
-      return foundTask;
-      
+      counter++;
+    }
+    return foundTask;
   }
-    
-  
+  // render method creates the task card
   render() {
     const tasksHtmlList = [];
     for (let counter = 0; counter < this.tasks.length; counter++) {
       const task = this.tasks[counter];
       const date = new Date(task.dueDate).toDateString();
       // const formattedDate = date.toDateString();
-      const taskHtml = 
-      createTaskHtml(
+      const taskHtml = createTaskHtml(
         task.name,
         task.descriptions,
         task.assignTo,
@@ -111,33 +114,56 @@ class TaskManager {
       tasksHtmlList.push(taskHtml);
       const tasksHtml = tasksHtmlList.join("\n");
       document.querySelector("#card-container").innerHTML = tasksHtml;
-    }
-    // let counter = 0;
-    // while (counter < this.tasks.length) {
-    //   const task = this.tasks[counter];
-    //   const date = new Date(task.dueDate).toDateString();
-    //   // const formattedDate = date.toDateString();
-    //   const taskHtml = createTaskHtml(
-    //     task.name,
-    //     task.descriptions,
-    //     task.assignTo,
-    //     date,
-    //     task.status,
-    //     task.id
-    //   );
-    //   tasksHtmlList.push(taskHtml);
-    //   const tasksHtml = tasksHtmlList.join("\n");
-    //   document.querySelector("#card-container").innerHTML = tasksHtml;
-    //   counter++;
-    // }
-    
-  };
- 
-};
-//export class { TaskManager };
 
-// document.querySelector("#card-task").innerHTML = tasks[1];
-// document.querySelector("#card-descriptions").innerHTML = this.description;
-// document.querySelector("#card-assignTo").innerHTML = this.assignTo;
-// document.querySelector("#card-dueDate").innerHTML = this.date;
-// document.querySelector("#card-status").innerHTML = this.status;
+      //Status change Todo and Done using class name visibile
+      // const markAsDone = document.getElementById("done-button");
+      // const statusStyle = document.getElementById("card-status");
+    }
+  }
+  //Adding the save method to store the current task
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+    localStorage.setItem("tasks", tasksJson);
+    const currentId = JSON.stringify(this.currentId);
+    localStorage.setItem("currentId", this.currentId);
+  }
+
+  // Load method to load from local storage
+  load() {
+    if (localStorage.getItem("currentId")) {
+      const currentId = localStorage.getItem("currentId");
+      const idParse = JSON.parse(currentId);
+      this.currentId = idParse;
+    }
+    if (localStorage.getItem("tasks")) {
+      const tasksJson2 = localStorage.getItem("tasks");
+      //console.log("This is tasksJson2: " + tasksJson2);
+      const parse = JSON.parse(tasksJson2);
+
+      this.tasks = parse;
+    }
+  }
+  deleteTask(taskId) {
+    let newTask = [];
+    for (let i = 0; i < this.tasks.length; i++) {
+      const task = localStorage.getItem("tasks");
+      console.log(task[i]);
+      if (task[i] !== taskId) {
+        task.slice(taskId);
+        console.log(newTask);
+      }
+    }
+  }
+}
+
+// do"dsfa"cument.querySelector(".invisible").className += "visable";
+// console.log(document.querySelector(".done-button"));
+
+//Changing backgroundColor and style when Mark as don clicked
+// document.querySelector(".btn-warning").style.backgroundColor =
+//   "ForestGreen";
+// document.querySelector(".btn-warning").style.color = "white";
+// console.log(
+//   "Looking status in getTaskbyId: " + newForm.getTaskById(task.status)
+// );
+// markAsDone.className = "btn-success";
