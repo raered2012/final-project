@@ -144,15 +144,23 @@ class TaskManager {
     }
   }
   deleteTask(taskId) {
-    let newTask = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = localStorage.getItem("tasks");
-      console.log(task[i]);
-      if (task[i] !== taskId) {
-        task.slice(taskId);
-        console.log(newTask);
-      }
+    console.log("taskID:", taskId)
+    //let newTask = [];
+
+    //as the loop iterates through the tasks array
+    for (let counter = 0; counter < this.tasks.length; counter++) {
+      //it should check if the id of the current task is the same as the taskId pushed to the deleteTask method, which is the task we want to delete
+      //console.log("task[counter].id:", task[counter].id);
+      if (this.tasks[counter].id === taskId) {
+        //if the current id is equal to the taskId passed in
+        //then will splice at that index and create an array that excludes that task
+        //splice(start of the array, amount to be deleted)
+        this.tasks.splice(counter, 1);
+        //newTask.push(task);
+        //this.tasks = newTask;
+      } 
     }
+    //console.log(newTask);
   }
 }
 
@@ -167,3 +175,11 @@ class TaskManager {
 //   "Looking status in getTaskbyId: " + newForm.getTaskById(task.status)
 // );
 // markAsDone.className = "btn-success";
+
+//if I create three tasks, two can be deleted and then the last is left until the page is refreshed. So it's like it's being deleted, but not rendered again until after the page refreshes
+//ideas
+//do we need to call render again?
+//is there an issue with the render method?
+//try messing with the order of the last few method calls of the event handler
+//is there a way I can see visually the methods being called, other than on the index.js file?
+//when tasks.length is = to 1, does it even run the delete method?
