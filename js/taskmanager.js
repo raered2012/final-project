@@ -159,8 +159,9 @@ class TaskManager {
         //newTask.push(task);
         //this.tasks = newTask;
       } 
+      
     }
-    //console.log(newTask);
+    
   }
 }
 
@@ -183,3 +184,5 @@ class TaskManager {
 //try messing with the order of the last few method calls of the event handler
 //is there a way I can see visually the methods being called, other than on the index.js file?
 //when tasks.length is = to 1, does it even run the delete method?
+
+//it('should create a new task array from the user input and push it to the current tasks array')

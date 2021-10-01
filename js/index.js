@@ -52,8 +52,8 @@ const alertMessage = () => {
 
 // "event" here is the event parameter
 // Event listener for Mark as done
-const cardList = document.querySelector("card-container");
-addEventListener("click", (e) => {
+const cardList = document.querySelector("#card-container");
+cardList.addEventListener("click", (e) => {
   const target = e.target;
   const clssList = target.classList.item(2);
   const parentTask = target.parentElement;
