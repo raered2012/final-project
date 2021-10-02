@@ -88,7 +88,7 @@ class TaskManager {
     let counter = 0;
     while (counter < this.tasks.length) {
       const task = this.tasks[counter];
-
+      console.log("Value of this.task[counter] ", task.id);
       if (task.id === taskId) {
         foundTask = task;
       }
@@ -144,26 +144,25 @@ class TaskManager {
     }
   }
   deleteTask(taskId) {
-    let newTask = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = localStorage.getItem("tasks");
-      console.log(task[i]);
-      if (task[i] !== taskId) {
-        task.slice(taskId);
-        console.log(newTask);
+    // let newTask = [];
+    console.log("taskID:", taskId);
+    //let newTask = [];
+
+    //as the loop iterates through the tasks array
+    for (let counter = 0; counter < this.tasks.length; counter++) {
+      //it should check if the id of the current task is the same as the taskId pushed to the deleteTask method, which is the task we want to delete
+      //console.log("task[counter].id:", task[counter].id);
+      if (this.tasks[counter].id === taskId) {
+        //if the current id is equal to the taskId passed in
+        //then will splice at that index and create an array that excludes that task
+        //splice(start of the array, amount to be deleted)
+        this.tasks.splice(counter, 1);
+        //newTask.push(task);
+        //this.tasks = newTask;
       }
+      // location.reload();
     }
   }
 }
 
-// do"dsfa"cument.querySelector(".invisible").className += "visable";
-// console.log(document.querySelector(".done-button"));
-
-//Changing backgroundColor and style when Mark as don clicked
-// document.querySelector(".btn-warning").style.backgroundColor =
-//   "ForestGreen";
-// document.querySelector(".btn-warning").style.color = "white";
-// console.log(
-//   "Looking status in getTaskbyId: " + newForm.getTaskById(task.status)
-// );
-// markAsDone.className = "btn-success";
+export { TaskManager };

@@ -1,5 +1,3 @@
-//import { TaskManager } from "./taskManager.js";
-
 let newForm = new TaskManager(0);
 
 // calling load method
@@ -52,13 +50,13 @@ const alertMessage = () => {
 
 // "event" here is the event parameter
 // Event listener for Mark as done
-const cardList = document.querySelector("card-container");
-addEventListener("click", (e) => {
+const cardList = document.querySelector("#card-container");
+cardList.addEventListener("click", (e) => {
   const target = e.target;
   const clssList = target.classList.item(2);
   const parentTask = target.parentElement;
-  console.log(parentTask);
   const clssListDelete = target.classList.item(0);
+
   // check if mark as done button is clicked
   if (clssList === "done-button") {
     //console.log(parentTask);
@@ -74,8 +72,11 @@ addEventListener("click", (e) => {
   if (clssListDelete === "delete-button") {
     const parentName = parentTask.getAttribute("delete-btn");
     const taskId = parseInt(parentName);
-    console.log(taskId);
+    console.log("taskId of Delete button " + taskId);
     newForm.deleteTask(taskId);
+    newForm.render();
+    newForm.save();
+    newForm.load();
   }
 });
 
