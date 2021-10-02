@@ -4,7 +4,7 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
     ? (markAsDone = "visible btn-primary")
     : (markAsDone = "invisible ");
 
-  status == "Done" ? (statusStyle = "#00e600") : (statusStyle = "#ffbf00");
+  status == "Done &#128513;" ? (statusStyle = "#00e600 ") : (statusStyle = "#ffbf00");
   const html2 = `
   <li  class="list-group-item ">
   <section>
@@ -112,14 +112,14 @@ class TaskManager {
         task.id
       );
       tasksHtmlList.push(taskHtml);
-      const tasksHtml = tasksHtmlList.join("\n");
-      document.querySelector("#card-container").innerHTML = tasksHtml;
-
       //Status change Todo and Done using class name visibile
       // const markAsDone = document.getElementById("done-button");
       // const statusStyle = document.getElementById("card-status");
     }
-  }
+    const tasksHtml = tasksHtmlList.join("\n");
+      document.querySelector("#card-container").innerHTML = tasksHtml; 
+    }
+  
   //Adding the save method to store the current task
   save() {
     const tasksJson = JSON.stringify(this.tasks);
@@ -144,18 +144,37 @@ class TaskManager {
     }
   }
   deleteTask(taskId) {
-    let newTask = [];
-    for (let i = 0; i < this.tasks.length; i++) {
-      const task = localStorage.getItem("tasks");
-      console.log(task[i]);
-      if (task[i] !== taskId) {
-        task.slice(taskId);
-        console.log(newTask);
-      }
-    }
-  }
-}
+    console.log("taskID:", taskId)
+    for (let counter = 0; counter < this.tasks.length; counter++) {
+      if (this.tasks[counter].id === taskId) {
+        this.tasks.splice(counter, 1);
 
+
+    // let newTask = [];
+    // for (let i =0; i < this.tasks.length; i++) {
+    //   let task = localStorage.getItem("tasks");
+    //   console.log(task);
+    //   console.log(i);
+
+  //     if (this.tasks[i].id === taskId) {
+  //       this.tasks.splice(i, 1);
+  //       console.log(this.task);
+  //       console.log(newTask);
+  //       console.log(this.tasks.length);
+  //     }
+  //     location.reload();
+  //   }
+  // }
+    
+    //     newTask.push(this.tasks[counter]);
+    //     this.tasks = newTask;
+    //   } else {
+    //     empty = []
+    //     this.tasks.push()
+    //   }
+    // }
+    // //console.log(newTask);
+  }
 // do"dsfa"cument.querySelector(".invisible").className += "visable";
 // console.log(document.querySelector(".done-button"));
 
@@ -166,4 +185,7 @@ class TaskManager {
 // console.log(
 //   "Looking status in getTaskbyId: " + newForm.getTaskById(task.status)
 // );
-// markAsDone.className = "btn-success";
+  // markAsDone.className = "btn-success"
+}
+  }
+}

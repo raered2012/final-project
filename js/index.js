@@ -57,7 +57,6 @@ addEventListener("click", (e) => {
   const target = e.target;
   const clssList = target.classList.item(2);
   const parentTask = target.parentElement;
-  console.log(parentTask);
   const clssListDelete = target.classList.item(0);
   // check if mark as done button is clicked
   if (clssList === "done-button") {
@@ -67,15 +66,21 @@ addEventListener("click", (e) => {
     const taskId = parseInt(idString);
     const foundTask = newForm.getTaskById(taskId);
     console.log(taskId, foundTask.id);
-    foundTask.status = "Done";
+    foundTask.status = "Done &#128513;";
     newForm.save();
     newForm.render();
   }
+
+
+
   if (clssListDelete === "delete-button") {
     const parentName = parentTask.getAttribute("delete-btn");
     const taskId = parseInt(parentName);
-    console.log(taskId);
+    console.log("taskId of Delete button" , taskId);
     newForm.deleteTask(taskId);
+    newForm.render();
+    newForm.save();
+    newForm.load();
   }
 });
 

@@ -15,11 +15,17 @@
     <script src="./js/taskManager.js" defer></script>
     <script src="./js/index.js" defer></script>
   </head>
-  <body>
+  <body 
+  style="background-color: mintcream">
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg bg-info navbar-info">
       <div class="container">
-        <a href="#" class="navbar-brand">Task Manager</a>
+      <div class=>
+        
+        <ul>
+          <a href="aboutus.html" target="_blank"><li >Who We Are</li></a> 
+        <a href="about.html" target="_blank"><li >About</li></a>
+        </ul>
         <button
           class="navbar-toggler"
           type="button"
@@ -31,26 +37,49 @@
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a href="#main" class="nav-link">Main</a>
+              <!-- <a href="#main" class="nav-link">Main</a> -->
             </li>
             <li class="nav-item">
-              <a href="#important" class="nav-link">Important Tasks</a>
+            
+              <!-- <a href="#important" class="nav-link">Important Tasks</a> -->
             </li>
             <li class="nav-item">
-              <a href="#calendar" class="nav-link">Calendar</a>
+              <!-- <a href="#calendar" class="nav-link">Calendar</a> -->
             </li>
           </ul>
-        </div>
+        </div> 
       </div>
     </nav>
-    <br />
-    <br />
-    <div class="center">
-      <h1>Task Manager</h1>
-    </div>
-    <hr />
+    <!-- <br />
+    <br /> -->
+
+    <header>
+    <div class="image"></div>
+    <img  src="https://20o8nn37v3mzb7unq3fsj61e-wpengine.netdna-ssl.com/wp-content/uploads/2019/02/What-is-task-management.jpg" width="100%" height="450" >
+
+  </header>
+
+   <!-- <div id ="id"> -->
+  
+
     <!-- Form Starts Here -->
-    <section class="form-container border border-info shadow p-3 ">
+    <form class="center">
+      <h2>Task Manager</h2>
+    </form>
+     <!-- <div class="row"> -->
+      <ul></ul>
+      <div class="col mb-3 mx-auto">
+        <div class="col-md-6 mx-auto"></div>
+      </div>
+    </div>
+    <section class="container h-100">
+      <div class="d-flex h100 text-center align-items-center"></div>
+      <div class="w-100 text-white">
+      <div class="container"> 
+        <div class="col-auto">
+
+    
+     <section class="form-container border border-info box-shadow  p-3 ">
       <div class="container">
         <div class="col-auto">
           <!-- You can add a class of d-flex here to make it possible to put multiple items in a flexbox and put the form and cards side by side-->
@@ -60,8 +89,8 @@
 
             <div class="row">
               <div class="col mb-3 text-info">
-                <label id ="task-label" for="task" class="form-label" >Task Name: </label>
-                <input 
+                <label id ="task-label" for="task" class="form-label" style="color: black;font-weight: bold;" >Task Name: </label>
+                <input style="background-color: mintcream;"
                   type="text"
                   class="form-control"
                   id="task"
@@ -73,12 +102,13 @@
             <!--Task Description-->
 
             <div class="mb-3 text-info">
-              <label for="task-description" class="form-label"
+              <label for="task-description" class="form-label" style="color: black;font-weight: bold;"
                 >Task Description:</label
               >
               <textarea
                 class="form-control"
                 id="task-description"
+                style="background-color: mintcream;" 
                 placeholder="Describe your task here"
                 rows="3"
               ></textarea>
@@ -87,8 +117,8 @@
             <!--Assign To-->
             
             <div class="text-info">
-              <label for="inputAssignTo">Assign to:</label>
-              <input
+              <label for="inputAssignTo" style="color: black;font-weight: bold;">Assign to:</label>
+              <input style="background-color: mintcream;"
                 type="text"
                 class="form-control"
                 id="assign"
@@ -100,8 +130,8 @@
             <!--Calender-->
             
             <div class="col mb-3 text-info">
-              <label for="task-due-date">Due Date:</label>
-              <input
+              <label for="task-due-date"style="color: black;font-weight: bold;">Due Date:</label>
+              <input 
                 type="date"
                 id="task-due-date"
                 name="task-start"
@@ -133,11 +163,13 @@
 
 
 
+
 </script>
 
 <footer class="footer bg-info fixed-bottom">
-  <a href="#">Help</a>
-  <a href="#">More Info</a>
+  <!-- <a href="#">Help</a>
+  <a href="#">More Info</a> -->
+  <p>&copy; Team 6 Generation USA</p>
 </footer>
   
     <script
