@@ -112,14 +112,13 @@ class TaskManager {
         task.id
       );
       tasksHtmlList.push(taskHtml);
-      const tasksHtml = tasksHtmlList.join("\n");
-      document.querySelector("#card-container").innerHTML = tasksHtml;
-
       //Status change Todo and Done using class name visible
       // const markAsDone = document.getElementById("done-button");
       // const statusStyle = document.getElementById("card-status");
-    }
-  }
+    } //we had the two lines below inside of the looping above, which caused our issue****
+      const tasksHtml = tasksHtmlList.join("\n");
+      document.querySelector("#card-container").innerHTML = tasksHtml;
+  }    
   //Adding the save method to store the current task
   save() {
     const tasksJson = JSON.stringify(this.tasks);
@@ -161,7 +160,7 @@ class TaskManager {
       } 
       
     }
-    location.reload();
+    
   }
 }
 
