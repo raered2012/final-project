@@ -115,7 +115,7 @@ class TaskManager {
       const tasksHtml = tasksHtmlList.join("\n");
       document.querySelector("#card-container").innerHTML = tasksHtml;
 
-      //Status change Todo and Done using class name visibile
+      //Status change Todo and Done using class name visible
       // const markAsDone = document.getElementById("done-button");
       // const statusStyle = document.getElementById("card-status");
     }
@@ -161,11 +161,11 @@ class TaskManager {
       } 
       
     }
-    
+    location.reload();
   }
 }
 
-// do"dsfa"cument.querySelector(".invisible").className += "visable";
+// document.querySelector(".invisible").className += "visible";
 // console.log(document.querySelector(".done-button"));
 
 //Changing backgroundColor and style when Mark as don clicked
@@ -173,7 +173,7 @@ class TaskManager {
 //   "ForestGreen";
 // document.querySelector(".btn-warning").style.color = "white";
 // console.log(
-//   "Looking status in getTaskbyId: " + newForm.getTaskById(task.status)
+//   "Looking status in getTaskById: " + newForm.getTaskById(task.status)
 // );
 // markAsDone.className = "btn-success";
 
