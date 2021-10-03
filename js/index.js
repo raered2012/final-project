@@ -53,7 +53,7 @@ const alertMessage = () => {
 // "event" here is the event parameter
 // Event listener for Mark as done
 const cardList = document.querySelector("#card-container");
-cardList.addEventListener("click", (e) => {
+addEventListener("click", (e) => {
   const target = e.target;
   const clssList = target.classList.item(2);
   const parentTask = target.parentElement;
@@ -66,15 +66,15 @@ cardList.addEventListener("click", (e) => {
     console.log(idString);
     const taskId = parseInt(idString);
     const foundTask = newForm.getTaskById(taskId);
-    //console.log(taskId, foundTask.id);
-    foundTask.status = "Done";
+    console.log(taskId, foundTask.id);
+    foundTask.status = "Done&#128513;";
     newForm.save();
     newForm.render();
   }
   if (clssListDelete === "delete-button") {
     const parentName = parentTask.getAttribute("delete-btn");
     const taskId = parseInt(parentName);
-    console.log(taskId);
+    console.log("taskId of Delete button" , taskId);
     newForm.deleteTask(taskId);
     newForm.render();
     newForm.save();

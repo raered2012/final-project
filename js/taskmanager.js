@@ -4,7 +4,7 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
     ? (markAsDone = "visible btn-primary")
     : (markAsDone = "invisible ");
 
-  status == "Done" ? (statusStyle = "#00e600") : (statusStyle = "#ffbf00");
+  status == "Done&#128513" ? (statusStyle = "#00e600") : (statusStyle = "#ffbf00");
   const html2 = `
   <li  class="list-group-item ">
   <section>
