@@ -61,8 +61,6 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
   return html2;
 };
 
-//Task Manager Class
-
 class TaskManager {
   constructor(currentId = 0) {
     this.currentId = currentId;
@@ -96,7 +94,7 @@ class TaskManager {
     }
     return foundTask;
   }
-  // render method creates the task card
+  
   render() {
     const tasksHtmlList = [];
     for (let counter = 0; counter < this.tasks.length; counter++) {
@@ -112,14 +110,12 @@ class TaskManager {
         task.id
       );
       tasksHtmlList.push(taskHtml);
-      //Status change Todo and Done using class name visible
-      // const markAsDone = document.getElementById("done-button");
-      // const statusStyle = document.getElementById("card-status");
-    } //we had the two lines below inside of the looping above, which caused our issue****
+      
+    } 
       const tasksHtml = tasksHtmlList.join("\n");
       document.querySelector("#card-container").innerHTML = tasksHtml;
   }    
-  //Adding the save method to store the current task
+  
   save() {
     const tasksJson = JSON.stringify(this.tasks);
     localStorage.setItem("tasks", tasksJson);
@@ -127,7 +123,7 @@ class TaskManager {
     localStorage.setItem("currentId", this.currentId);
   }
 
-  // Load method to load from local storage
+  
   load() {
     if (localStorage.getItem("currentId")) {
       const currentId = localStorage.getItem("currentId");
@@ -136,52 +132,21 @@ class TaskManager {
     }
     if (localStorage.getItem("tasks")) {
       const tasksJson2 = localStorage.getItem("tasks");
-      //console.log("This is tasksJson2: " + tasksJson2);
+      
       const parse = JSON.parse(tasksJson2);
 
       this.tasks = parse;
     }
-  }
+  };
+
+  
   deleteTask(taskId) {
     console.log("taskID:", taskId)
-    //let newTask = [];
-
-    //as the loop iterates through the tasks array
     for (let counter = 0; counter < this.tasks.length; counter++) {
-      //it should check if the id of the current task is the same as the taskId pushed to the deleteTask method, which is the task we want to delete
-      //console.log("task[counter].id:", task[counter].id);
       if (this.tasks[counter].id === taskId) {
-        //if the current id is equal to the taskId passed in
-        //then will splice at that index and create an array that excludes that task
-        //splice(start of the array, amount to be deleted)
         this.tasks.splice(counter, 1);
-        //newTask.push(task);
-        //this.tasks = newTask;
       } 
-      
     }
-    
   }
-}
+};
 
-// document.querySelector(".invisible").className += "visible";
-// console.log(document.querySelector(".done-button"));
-
-//Changing backgroundColor and style when Mark as don clicked
-// document.querySelector(".btn-warning").style.backgroundColor =
-//   "ForestGreen";
-// document.querySelector(".btn-warning").style.color = "white";
-// console.log(
-//   "Looking status in getTaskById: " + newForm.getTaskById(task.status)
-// );
-// markAsDone.className = "btn-success";
-
-//if I create three tasks, two can be deleted and then the last is left until the page is refreshed. So it's like it's being deleted, but not rendered again until after the page refreshes
-//ideas
-//do we need to call render again?
-//is there an issue with the render method?
-//try messing with the order of the last few method calls of the event handler
-//is there a way I can see visually the methods being called, other than on the index.js file?
-//when tasks.length is = to 1, does it even run the delete method?
-
-//it('should create a new task array from the user input and push it to the current tasks array')
