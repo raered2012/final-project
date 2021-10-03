@@ -1,6 +1,7 @@
 .center {
   margin: auto;
-  text-align: center;
+  text-align: center; 
+  
 }
 
 
@@ -11,7 +12,7 @@
   border: 3px solid;
   border-radius: 25px;
   padding: 30px;
-  background-color: rgb(215, 245, 255)
+  background-color: #b1e7e5
 }
 
 .footer {
@@ -30,7 +31,7 @@ button {
 .card {
   border-color: rgb(118, 215, 240);
   border-radius: 10px;
-  background-color: mintcream
+  background-color: #ffffff
   
 }
 .card-text {
@@ -56,19 +57,26 @@ button {
 .card-title {
   position: relative;
   bottom: 5px;
+  color: black;
+  font-weight: bold
+  padding 20px;
+ 
+
 }
 
 .done-bar {
   margin-left: 20px;
+  
 }
 
 .list-group-item {
   border: none;
 }
-
 .card-body {
   height: 275px;
-  overflow-wrap: hidden;
+  overflow-wrap: hidden;box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+
+
 }
 
 .btn-mark {
@@ -81,12 +89,14 @@ button {
 
 .card-text {
   min-height: 50px;
+
 }
 
 .list-group {
   justify-content: center;
 
 }
+
 
 @media only screen and (max-width: 740px) and (min-width: 320px) {
   .form-container {
@@ -96,15 +106,7 @@ button {
 
 @media only screen and (max-width: 1500px) and (min-width: 400px) {
   .list-group {
-    flex-wrap: wrap;
+    flex-wrap: wrap
   }
- 
-
-
-
-
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> bccd5ee8ddaaafb7a29c9c94d4212be070106b7f
+

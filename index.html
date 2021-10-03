@@ -18,32 +18,45 @@
   <body 
   style="background-color: mintcream">
     <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg bg-info navbar-info">
-      <div class="container">
-      <div class=>
+    <!-- <nav class="navbar navbar-expand-lg bg-info navbar-info">
+      <div class="navbar" style="color: #b1e7e5;">
         
-        <ul>
-          <a href="aboutus.html" target="_blank"><li >Who We Are</li></a> 
+        <ul> -->
+          <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #5a9e9b;">
+          <ul>
+          
+        <a href="aboutus.html" target="_blank"><li >Who We Are</li></a> 
         <a href="about.html" target="_blank"><li >About</li></a>
+      
         </ul>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
+        <button 
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#colNav">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+        id="colNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+
+          </li>
+
+        </ul>
+      </div>
+          <!-- <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navmenu">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <!-- <a href="#main" class="nav-link">Main</a> -->
+            <li class="nav-item"> -->
+              <!-- <a href="#main" class="nav-link">Main</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item"> -->
             
               <!-- <a href="#important" class="nav-link">Important Tasks</a> -->
-            </li>
-            <li class="nav-item">
+            <!-- </li>
+            <li class="nav-item"> -->
               <!-- <a href="#calendar" class="nav-link">Calendar</a> -->
             </li>
           </ul>
@@ -65,6 +78,18 @@
     <!-- Form Starts Here -->
     <form class="center">
       <h2>Task Manager</h2>
+      <style>
+        h2
+        {
+          color: darkgrey;
+         font-size: 5.5em;text-shadow: 7px 5px 5px rgb(52, 99, 96) , 0 0 1em rgb(255, 255, 255), 0 0 0.2em rgb(241, 225, 225);
+          transition: opacity 0.8s ease-in-out;
+
+          
+  
+
+        }
+      </style>
     </form>
      <!-- <div class="row"> -->
       <ul></ul>
@@ -166,9 +191,8 @@
 
 </script>
 
-<footer class="footer bg-info fixed-bottom">
-  <!-- <a href="#">Help</a>
-  <a href="#">More Info</a> -->
+<footer class="footer footer-expand-bg fixed-bottom" style="background-color: #5a9e9b;">
+  
   <p>&copy; Team 6 Generation USA</p>
 </footer>
   
