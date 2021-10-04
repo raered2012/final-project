@@ -1,5 +1,5 @@
 
-The Task Manager applications allows for easy task management. The user can create multiple tasks and assign them to specific team members. Our sleek design and business-friendly features create a great environment to host daily, weekly, monthly or even yearly tasks. 
+This Task Manager application allows for easy task management. The user can create multiple tasks and assign them to specific team members. Our sleek design and business-friendly features create a great environment to host daily, weekly, monthly or even yearly tasks. 
 
 Features
   -Assign tasks to a specific team member
