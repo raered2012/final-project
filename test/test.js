@@ -1,10 +1,16 @@
 const assert = chai.assert;
+// const T = require("../js/taskmanager.js");
 import { TaskManager } from "../js/taskmanager.js";
-
-
-describe("TaskManager web application", () => {
+// describe("greetings", function () {
+//   it("should say hello", function () {
+//     assert.equal("hello", "hello");
+//   });
+// });
+// // mocha.run();
+// const TaskManager = require("../js/taskmanager");
+describe("Task Manager web application", () => {
   it("Checks if Task is created", () => {
-    
+    //setup tasks
     const expected = {
       name: "Wash Dishes",
       descriptions: "Do the dishes befor dinner",
@@ -15,37 +21,44 @@ describe("TaskManager web application", () => {
     const descriptions = "Do the dishes befor dinner";
     const assignTo = "Raven";
     const dueDate = "10/1/2021";
-    
+    //Exercise
     const init = new TaskManager();
-    
-    const result = init.addTask(name, descriptions, assignTo, dueDate);
-    const result2 = init.addTask["name"];
-    const expected2 = expected["name"];
-    
-    assert.equal(result2, expected2);
+    const newTask = init.addTask(name, descriptions, assignTo, dueDate);
+    {
+      const task = {
+        name: name,
+        descriptions: descriptions,
+        assignTo: assignTo,
+        dueDate: dueDate,
+      };
+      const result = task[name];
+      assert.deepEqual(result, expected[name]);
+    }
+    //Verify
   });
   it("Delete task fro Task Manager app", () => {
-    
+    //setup
     const taskId = 1;
     const currentId = 1;
-    
+    //excerise
     const init = new TaskManager();
-    if (init.deleteTask(taskId) === currentId) {
+    const result = init.deleteTask(taskId);
+    if (result === currentId) {
     }
-    
+    //Verify
     assert.equal(taskId, currentId);
   });
   it("Getting task by its ID", () => {
-    
-    const foundTask = 1;
-    const currentId = 1;
-    
+    //setup
     const init = new TaskManager();
-    if (init.getTaskById(foundTask) === currentId) {
+    const foundTaskId = localStorage.getItem("currentId");
+    const taskId = 1;
+    // const currentId = 1;
+    //excerise
+    if (init.getTaskById(taskId) === foundTaskId) {
+      //Verify
     }
-    
-    assert.equal(taskId, currentId);
+    assert.equal(taskId, foundTaskId);
   });
 });
-
 mocha.run();

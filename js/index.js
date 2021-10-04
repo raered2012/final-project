@@ -56,18 +56,15 @@ addEventListener("click", (e) => {
   const clssListDelete = target.classList.item(0);
   if (clssList === "done-button") {
     const idString = parentTask.getAttribute("data-task-id");
-    console.log(idString);
     const taskId = parseInt(idString);
     const foundTask = newForm.getTaskById(taskId);
-    console.log(taskId, foundTask.id);
-    foundTask.status = "Done&#128513;";
+    foundTask.status = "Done &#128513";
     newForm.save();
     newForm.render();
   }
   if (clssListDelete === "delete-button") {
     const parentName = parentTask.getAttribute("delete-btn");
     const taskId = parseInt(parentName);
-    console.log("taskId of Delete button" , taskId);
     newForm.deleteTask(taskId);
     newForm.render();
     newForm.save();

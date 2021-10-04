@@ -11,58 +11,55 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <title>Task Management App</title>
     <script src="./js/taskManager.js" defer></script>
     <script src="./js/index.js" defer></script>
   </head>
-  <body
-  style="background-color: mintcream;">
-    <!-- Nav Bar -->
-    <nav class="navbar navbar-expand-lg bg-info navbar-info">
-      <div class="container">
-        <div class=>
+  <body style="background-color: mintcream;">
 
-          <ul>
-        <a href="aboutus.html" target="_blank"><li >Who We Are</li></a>
-        <a href="about.html" target="_blank"><li >About</li></a>
-        </ul>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navmenu"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navmenu">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              
-            </li>
-            <li class="nav-item">
-              
-            </li>
-            <li class="nav-item">
-              
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<!-- Nav Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container navbar-white">
+    <button type="button"  data-bs-toggle ='collapse'
+      data-bs-target="#navbarNav"
+      class='navbar-toggler'
+      aria-controls='navbarNav' 
+      aria-expanded='false'
+      aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon "></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav nav">
+        <li class="nav-item">
+          <a href="aboutus.html" target="_blank" class="nav-link"><li>Who We Are</li></a>
+        </li>
+        <li class="nav-item">
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" class="nav-link">Calendar</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
     
-    <header<div class="image"></div>
-    <img  src="https://20o8nn37v3mzb7unq3fsj61e-wpengine.netdna-ssl.com/wp-content/uploads/2019/02/What-is-task-management.jpg" width="100%" height="450" >
-  </header>
+    <header>
+      <div class="image"></div>
+      <img  src="../What-is-task-management.jpg" width="100%" height="auto" >
+    </header>
 
 <!-- Form Starts Here -->
-    <form class="center">
+    <div class="center">
       <h2>Task Manager</h2>
-    </form>
+    </div>
 
-    <!-- <div class="row"> -->
-    <ul></ul>
     <div class="col mb-3 mx-auto">
-      <div class="col-md-6 mx-auto"></div>
+      
     </div>
   </div>
   <section class="container h-100">
@@ -72,108 +69,68 @@
       <div class="col-auto">
 
     
-    <section class="form-container border border-info shadow p-3 ">
-      <div class="container">
-        <div class="col-auto">
+      <section class="form-container border border-info shadow p-3 ">
+        <div class="container">
+          <div class="col-auto">
           
-          <form name="taskform" onsubmit="validForm(event)" >
+            <form name="taskform" onsubmit="validForm(event)">
             
             <!--Task-->
 
-            <div class="row">
-              <div class="col mb-3 text-info">
-                <label id ="task-label" for="task" class="form-label" style="color: black;font-weight: bold;" >Task Name: </label>
-                <input style="background-color: mintcream;"
-                  type="text"
-                  class="form-control"
-                  id="task"
-                  placeholder="Enter task here" 
-                />
+              <div class="row">
+                <div class="col mb-3 text-info">
+                  <label id ="task-label" for="task" class="form-label" style="color: black;font-weight: bold;">Task Name: </label>
+                  <input style="background-color: mintcream;" type="text" class="form-control" id="task" placeholder="Enter task here"/>
+                </div>
               </div>
-            </div>
 
-            <!--Task Description-->
+              <!--Task Description-->
 
-            <div class="mb-3 text-info">
-              <label for="task-description" class="form-label" style="color: black;font-weight: bold;"
-                >Task Description:</label
-              >
-              <textarea
-                class="form-control"
-                id="task-description"
-                style="background-color: mintcream;" 
-                placeholder="Describe your task here"
-                rows="3"
-              ></textarea>
-            </div>
+              <div class="mb-3 text-info">
+                <label for="task-description" class="form-label" style="color: black;font-weight: bold;">Task Description:</label>
+                <textarea class="form-control" id="task-description" style="background-color: mintcream;" placeholder="Describe your task here" rows="3"></textarea>
+              </div>
             
-            <!--Assign To-->
+              <!--Assign To-->
             
-            <div class="text-info">
-              <label for="inputAssignTo" style="color: black;font-weight: bold;">Assign to:</label>
-              <input style="background-color: mintcream;"
-                type="text"
-                class="form-control"
-                id="assign"
-                placeholder="Who would you like to assign this to?"
-              />
-            </div>
-            <br />
+              <div class="text-info">
+                <label for="inputAssignTo" style="color: black;font-weight: bold;">Assign to:</label>
+                <input style="background-color: mintcream;" type="text" class="form-control" id="assign" placeholder="Who would you like to assign this to?"/>
+              </div>
+              <br/>
             
             
-            <!--Calender-->
+              <!--DueDate-->
             
-            <div class="col mb-3 text-info">
-              <label for="task-due-date"style="color: black;font-weight: bold;">Due Date:</label>
-              <input 
-                type="date"
-                id="task-due-date"
-                name="task-start"
-                
-              />
-            </div>
-            <br />
-            <button id = "add-task-btn" onclick="" type="" class="btn btn-primary">Add Task</button>
+              <div class="col mb-3 text-info">
+                <label for="task-due-date" style="color: black;font-weight: bold;">Due Date:</label>
+                <input type="date" id="task-due-date" name="task-start"/>
+              </div>
+
+              <br/>
+
+              <button id = "add-task-btn" onclick="" type="" class="btn btn-primary">Add Task</button>
           
-          </form>
+            </form>
+          </div>
         </div>
-        <div class="cards"></div>
-      </div>
-    </section>
-    <br />
-    
-    
+      </section>
 
-    <!--List Group-->
-    <!--List Group-->
+      <br/>
+    
+   <!--List Group-->
     <div class="container group-list-container ">
-      <div class="container group-list"></div>
         <ul id="card-container" class="list-group list-group-horizontal-md ">
-        
-      </ul>
     </diV>
-  </div>
+    
+    <!--Footer-->
+    <footer class="footer bg-info fixed-bottom">
+      <p>&copy; Team 6 Generation USA</p>
+    </footer>
   
-  
-  
-  
-  </script>
-  
-  <footer class="footer bg-info fixed-bottom">
-  
-  <p>&copy; Team 6 Generation USA</p>
-</footer>
-  
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    
     <br>
 
-    <!--Footer-->
-  <div>
-  </div>
   </body>
-  
-    </html>
+</html>
