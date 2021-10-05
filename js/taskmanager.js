@@ -4,7 +4,7 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
     ? (markAsDone = "visible btn-primary")
     : (markAsDone = "invisible ");
 
-  status == "Done" ? (statusStyle = "#00e600") : (statusStyle = "#ffbf00");
+  status == "Done" ? (statusStyle = "#00e600 ") : (statusStyle = "#ffbf00");
   const html2 = `
   <li  class="list-group-item ">
   <section>
@@ -47,7 +47,7 @@ const createTaskHtml = (tasks, descriptions, assignTo, dueDate, status, id) => {
             <a href="#" class="${markAsDone} done-button btn btn-primary btn-sm btn-mark position-absolute bottom-0 start-0 ">Mark as done</a>
           </div>
           <div class="col" delete-btn = '${id}'>
-            <a href="#"  class="delete-button  btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
+            <a href="#card-container"  class="delete-button  btn btn-primary btn-sm btn-mark position-absolute bottom-0 end-0 ">Delete</a>
           </div>
           </div>  
         </div>
@@ -112,13 +112,13 @@ class TaskManager {
         task.id
       );
       tasksHtmlList.push(taskHtml);
-      const tasksHtml = tasksHtmlList.join("\n");
-      document.querySelector("#card-container").innerHTML = tasksHtml;
 
       //Status change Todo and Done using class name visibile
       // const markAsDone = document.getElementById("done-button");
       // const statusStyle = document.getElementById("card-status");
     }
+    const tasksHtml = tasksHtmlList.join("\n");
+    document.querySelector("#card-container").innerHTML = tasksHtml;
   }
   //Adding the save method to store the current task
   save() {
@@ -146,7 +146,6 @@ class TaskManager {
   deleteTask(taskId) {
     // let newTask = [];
     console.log("taskID:", taskId);
-    //let newTask = [];
 
     //as the loop iterates through the tasks array
     for (let counter = 0; counter < this.tasks.length; counter++) {

@@ -1,3 +1,36 @@
+body {
+  background-color: rgb(44, 9, 77);
+  
+}
+.list-group-item{
+  background-color: rgb(41, 17, 63);
+  
+}
+h1 {
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bold;
+  color: blue
+
+}
+.nav-link{
+  color:white;
+}
+.navbar{
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  background-color:rgb(233, 137, 93);
+  border-color: rgb(118, 215, 240);
+  width: 50%;
+  margin:auto;
+  border-radius: 5px;
+}
+
 .center {
   margin: auto;
   text-align: center;
@@ -11,9 +44,19 @@
   border-radius: 25px;
   padding: 30px;
 }
-
+span {
+  font-family: 'Rubik', sans-serif;
+}
 .footer {
+  width: 50%;
+  border-radius: 50px;
+  align-items: center;
+  margin: auto;
   text-align: center;
+  background-color:rgb(233, 137, 93);
+  border-color: rgb(118, 215, 240);
+
+
 }
 
 h5 {
@@ -24,15 +67,37 @@ button {
   text-align: right;
   justify-content: baseline;
 }
-
+#card-content {
+  background-color:rgb(44, 9, 77);
+}
 .card {
   border-color: rgb(118, 215, 240);
   border-radius: 10px;
+  margin-bottom: auto;
 }
 .card-text {
   text-align: left;
 }
+#task-due-date{
+  border-radius: 10px;
+  padding: auto;
+  text-align: right;
+  margin-left: 10px;
+}
+.footer {
+  margin-top:50px;
+  position: relative;
+  position: fixed-bottom;
+}
+.delete-button {
+  background-color:rgb(177, 52, 52)
+}
 
+.btn-warning.disabled, .btn-warning:disabled {
+  color: #000;
+  background-color: #ffc107;
+  border-color: transparent;
+}
 .status-bar {
   background-color: transparent;
   position: relative;
@@ -62,6 +127,8 @@ button {
 }
 
 .card-body {
+  border-radius: 10px;
+  background-color: rgb(231, 132, 86);
   height: 275px;
   overflow-wrap: hidden;
 }
