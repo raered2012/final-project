@@ -52,7 +52,7 @@ describe("Task Manager web application", () => {
     //setup
     const init = new TaskManager();
     const foundTaskId = localStorage.getItem("currentId");
-    const taskId = 1;
+    const taskId = 4;
     // const currentId = 1;
     //excerise
     if (init.getTaskById(taskId) === foundTaskId) {
